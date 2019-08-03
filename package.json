@@ -1,0 +1,30 @@
+{
+  "name": "slack-remove-files",
+  "version": "1.0.0",
+  "main": "index.js",
+  "bin": "./index.js",
+  "preferGlobal": true,
+  "scripts": {},
+  "keywords": [
+    "slack", 
+    "slack remove files", 
+    "slack remove old files", 
+    "slack remover arquivos", 
+    "slack remover antigos"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meneguite/slack-remove-files.git"
+  },
+  "bugs": {
+    "url": "https://github.com/meneguite/slack-remove-files/issues"
+  },
+  "homepage": "https://github.com/meneguite/slack-remove-files#readme",
+  "author": "Ronaldo Meneguite <ronaldo@fireguard.com.br>",
+  "license": "MIT",
+  "description": "This utility makes it possible to remove old files in slack",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "moment": "^2.24.0"
+  }
+}
