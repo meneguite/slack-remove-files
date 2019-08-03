@@ -8,9 +8,11 @@ npm install slack-remove-files -g
 slack-remove-files {amount} {unit} {slack-legacy-token}
 
 Ex.: 
+```bash
 slack-remove-files 12 months xoxp-XXXXXXXXXXXXXXXXXXXXX
-slack-remove-files 60 days xoxp-XXXXXXXXXXXXXXXXXXXXX
 
+slack-remove-files 60 days xoxp-XXXXXXXXXXXXXXXXXXXXX
+```
 
 *************
 ALERT: TO ALL PREVIOUS FILES THE DATE INFORMED WILL BE PERMANENTLY REMOVED
