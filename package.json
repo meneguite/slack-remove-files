@@ -1,6 +1,6 @@
 {
   "name": "slack-remove-files",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "bin": "./index.js",
   "preferGlobal": true,
@@ -10,7 +10,7 @@
     "slack remove files", 
     "slack remove old files", 
     "slack remover arquivos", 
-    "slack remover antigos"
+    "slack remover arquivos antigos"
   ],
   "repository": {
     "type": "git",

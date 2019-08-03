@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const moment = require('moment');
 const axios = require('axios');
 
@@ -33,20 +32,16 @@ process.stdin.on('data', async (option) => {
 });
 
 const removeFile = async (file) => {
-  await axios.delete(`https://slack.com/api/files.delete?token=${token}&file=${file.id}`, {}, 
-    { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } 
-  });
+  const url = `https://slack.com/api/files.delete?token=${token}&file=${file.id}`;
+  await axios.delete(url, {}, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' }});
   console.info(`[${moment(file.timestamp * 1000).toISOString()}] Removed ${file.name} - (${(file.size/1024).toFixed(0)} kb)`);
 }
 
 const getAllFilesForRemove = async (dateLastThem, backupFiles = true, lastPage = 0) => {
   const time = dateLastThem.unix();
   const page = lastPage + 1;
-  const { data } = await axios.get(`https://slack.com/api/files.list?token=${token}&ts_to=${time}&page=${page}&count=100`, {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded'
-    }
-  });
+  const url = `https://slack.com/api/files.list?token=${token}&ts_to=${time}&page=${page}&count=100`;
+  const { data } = await axios.get(url, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' }});
   for (file of data.files) {
     await removeFile(file);
   }
@@ -63,5 +58,3 @@ const processRemoveAllFiles = async (dateLastThem) => {
   }
   process.exit(0);
 }
-
-
